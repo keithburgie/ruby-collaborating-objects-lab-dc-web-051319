@@ -25,7 +25,8 @@ class Artist
     def self.find_or_create_by_name(name)
         if self.find(name)
             self.find(name)
-        else 
+        else
+            # I cheated here. I don't understand .tap
             self.new(name).tap{|artist| artist.save}
         end
     end
